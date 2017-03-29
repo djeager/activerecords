@@ -2,7 +2,7 @@
 
 namespace djeager;
 
-class ActiveRecords extends \yii\db\ActiveRecord
+class ActiveRecord extends \yii\db\ActiveRecord
 {
     public function runScenario()
     {
