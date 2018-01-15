@@ -67,10 +67,6 @@ class ActiveRecord extends \yii\db\ActiveRecord
         return $values;
     }
 
-    public function getAlias()
-    {
-        return [];
-    }
 
     public function load($data, $formName = null):bool
     {
