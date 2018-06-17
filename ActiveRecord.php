@@ -68,7 +68,7 @@ class ActiveRecord extends \yii\db\ActiveRecord
     }
 
 
-    public function load($data, $formName = null):bool
+    public function load($data, $formName = null)
     {
         $this->load = $data;
         $this->trigger(self::EVENT_BEFORE_LOAD);
