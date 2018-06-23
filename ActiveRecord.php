@@ -84,7 +84,6 @@ class ActiveRecord extends \yii\db\ActiveRecord
 
     protected function toogleScenario($name, $callback)
     {
-
         $toch = $this->getScenario();
         if (key_exists($name, $this->scenarios()))
             $this->setScenario($name);
@@ -96,3 +95,4 @@ class ActiveRecord extends \yii\db\ActiveRecord
 }
     
     
+
