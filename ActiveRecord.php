@@ -6,7 +6,7 @@ class ActiveRecord extends \yii\db\ActiveRecord
 {
     const EVENT_BEFORE_LOAD = 'before_load';
     const EVENT_AFTER_LOAD = 'after_load';
-
+    const EVENT_CHANGE_SCENARIO = 'changeScenario';
     public $load;
 
     public function __get($name)
@@ -67,7 +67,6 @@ class ActiveRecord extends \yii\db\ActiveRecord
         return $values;
     }
 
-
     public function load($data, $formName = null): bool
     {
         $this->load = $data;
@@ -91,6 +90,12 @@ class ActiveRecord extends \yii\db\ActiveRecord
         $return = call_user_func($callback);
         $this->setScenario($toch);
         return $return;
+    }
+
+    public function setScenario($name)
+    {
+        $this->trigger(self::EVENT_CHANGE_SCENARIO);
+        return parent::setScenario($name);
     }
 }
     
